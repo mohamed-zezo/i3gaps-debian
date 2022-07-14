@@ -19,6 +19,9 @@ sudo apt install -y network-manager-gnome
 # Installation for Appearance management
 sudo apt install -y lxappearance 
 
+# Installation for git
+sudo apt install -y git
+
 # File Manager (eg. pcmanfm,krusader)
 sudo apt install -y thunar xfce4-settings ranger
 
@@ -29,7 +32,7 @@ sudo systemctl enable avahi-daemon
 sudo systemctl enable acpid
 
 # Terminal (eg. terminator,kitty,xfce4-terminal)
-sudo apt install -y kitty
+sudo apt install -y terminator
 
 # Sound packages
 sudo apt install -y pulseaudio alsa-utils pavucontrol volumeicon-alsa
@@ -40,17 +43,17 @@ sudo apt install -y neofetch htop
 # EXA installation
 # replace ls command in .bashrc file with line below
 # alias ls='exa -al --long --header --color=always --group-directories-first' 
-sudo apt install -y exa
+# sudo apt install -y exa
 
 # Printing and bluetooth (if needed)
 sudo apt install -y cups
-sudo apt install -y bluez blueman
+# sudo apt install -y bluez blueman
 
-sudo systemctl enable bluetooth
+# sudo systemctl enable bluetooth
 sudo systemctl enable cups
 
 # Browser Installation (eg. chromium)
-sudo apt install -y firefox-esr 
+sudo apt install -y chromium 
 
 # Desktop background browser/handler 
 # feh --bg-fill /path/to/directory 
@@ -66,7 +69,7 @@ sudo apt install -y dmenu sxhkd numlockx rofi dunst libnotify-bin picom unzip ge
 
 # Command line text editor -- nano preinstalled  -- I like micro but vim is great
 # sudo apt install -y micro
-sudo apt install -y vim
+# sudo apt install -y vim
 
 # Install fonts
 sudo apt install fonts-font-awesome fonts-powerline fonts-ubuntu fonts-liberation2 fonts-liberation fonts-terminus
@@ -83,6 +86,11 @@ mkdir -p build && cd build
 meson --prefix /usr/local
 ninja
 sudo ninja install
+
+#sudo apt-apt-repository ppa:regolith-linux/release
+#sudo apt update
+#sudo apt install -y i3-gaps 
+
 
 # Install Ly Console Display Manager
 cd 
@@ -122,7 +130,7 @@ sudo cp ./temp /usr/share/xsessions/i3.desktop;rm ./temp
 ## These two scripts will install nerdfonts and copy my configuration files into the ~/.config directory
 ## Configuration uses 
 
-source ~/i3gaps-debian/nerdfonts.sh
+#source ~/i3gaps-debian/nerdfonts.sh
 source ~/i3gaps-debian/copyconf.sh
 
 sudo apt autoremove
